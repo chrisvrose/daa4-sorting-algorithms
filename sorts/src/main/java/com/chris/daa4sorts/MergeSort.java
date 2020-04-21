@@ -46,7 +46,7 @@ public class MergeSort<T> extends GenericSort<T> {
         }
 
         int i, j;
-        //merge
+        // merge
         for (i = 0, j = 0; i < (m - l + 1) && j < (h - m);) {
             count++;
             if (comparator.compare(a1.get(i), a2.get(j)) < 0) {
@@ -67,6 +67,6 @@ public class MergeSort<T> extends GenericSort<T> {
             j++;
             count++;
         }
-        
+
     }
 }

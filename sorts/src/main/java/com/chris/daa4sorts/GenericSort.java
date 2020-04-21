@@ -10,6 +10,10 @@ public abstract class GenericSort<T> implements Sorter<T>{
      * A set of elements to use. Is used directly for simpler sorts, or written to later.
      */
     protected List<T> elements;
+    public List<T> getElements(){
+        return elements;
+    }
+
     /**
      * A comparator. Used to either sort, or to decide if the final array
      */
