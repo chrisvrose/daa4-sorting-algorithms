@@ -11,4 +11,5 @@ public interface Sorter<T> {
      * @return
      */
     boolean isSorted();
+    public long getCount();
 }
