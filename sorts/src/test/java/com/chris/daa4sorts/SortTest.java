@@ -17,15 +17,13 @@ public class SortTest {
     @Test
     public void shouldAnswerWithTrue() {
         ArrayList<Integer> list = new ArrayList<Integer>();
-        list.add(1);
-        list.add(53);
-        list.add(343);
-        list.add(56);
+        for(int i=10;i>0;i--) list.add(i);
 
         ArrayList<Sorter<Integer>> sorts = new ArrayList<Sorter<Integer>>();
         sorts.add(new RadixSort(list, 10));
         sorts.add(new InsertionSort<Integer>(list, (a, b) -> a - b));
-        sorts.add(new MergeSort<Integer>(list, (a, b) -> a - b));
+        sorts.add(new TreeSort(list));
+        //sorts.add(new MergeSort<Integer>(list, (a, b) -> a - b));
         for (Sorter<Integer> sorter : sorts) {
             sorter.sort();
             assertTrue(sorter.isSorted());

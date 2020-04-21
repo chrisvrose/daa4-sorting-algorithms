@@ -15,7 +15,7 @@ public class RadixSort extends GenericSort<Integer> {
             count++;
             return a > b ? a : b;
         }).orElse(1);
-        iterationsCount = (int)Math.ceil(Math.log(iterationsCount)/Math.log(base));
+        iterationsCount = (int)Math.ceil(Math.log(iterationsCount)/Math.log(base))+1;
     }
 
     protected void countSort(int pos) {
