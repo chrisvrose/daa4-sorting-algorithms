@@ -1,4 +1,4 @@
-package jar;
+package com.chris.daa4sorts;
 
 import static org.junit.Assert.assertTrue;
 

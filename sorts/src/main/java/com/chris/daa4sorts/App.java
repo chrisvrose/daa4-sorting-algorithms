@@ -1,4 +1,4 @@
-package jar;
+package com.chris.daa4sorts;
 
 /**
  * Hello world!
