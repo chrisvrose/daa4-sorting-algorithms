@@ -14,6 +14,10 @@ public abstract class GenericSort<T> implements Sorter<T>{
      * A comparator. Used to either sort, or to decide if the final array
      */
     protected Comparator<T> comparator;
+    /**
+     * Count
+     */
+    protected long count;
     
 
 
@@ -35,5 +39,5 @@ public abstract class GenericSort<T> implements Sorter<T>{
      * @return Get a count of number of computations done.
      * (Eg. Comparisons for comparison sorts)
      */
-    public abstract long getCount();
+    public long getCount(){return count;}
 }

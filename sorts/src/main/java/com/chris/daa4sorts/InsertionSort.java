@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class InsertionSort<T> extends GenericSort<T> {
-    private long count = 0;
 
     public InsertionSort(ArrayList<T> elements, Comparator<T> comparator) {
         this.elements = elements;
