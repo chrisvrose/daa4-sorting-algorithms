@@ -13,14 +13,14 @@ import org.junit.Test;
 import junit.framework.AssertionFailedError;
 
 /**
- * Unit test for simple App.
+ * Unit tests for all the sorts, and to show the counts
  */
 public class SortTest {
     final int num = 8192;
     /**
      * Prepare a sorted array
      * 
-     * @param num
+     * @param num Number of elements
      * @return
      */
     ArrayList<Integer> prepareAscendingList(int num) {
@@ -30,6 +30,11 @@ public class SortTest {
         return list;
     }
 
+    /**
+     * Prepare a shuffled array of elements
+     * @param num Number of elements
+     * @return
+     */
     ArrayList<Integer> prepareRandomList(int num) {
         ArrayList<Integer> list = new ArrayList<Integer>();
         for (int i = 1; i <= num; i++)
@@ -41,7 +46,7 @@ public class SortTest {
     /**
      * Prepare a reverse Sorted Array
      * 
-     * @param num
+     * @param num Number of elements
      * @return
      */
     ArrayList<Integer> prepareDescendingList(int num) {
