@@ -31,6 +31,10 @@ public class TreeSort extends GenericSort<Integer> {
 
     }
 
+    public String toString(){
+        return "Tree Sort";
+    }
+
 }
 
 class Node {

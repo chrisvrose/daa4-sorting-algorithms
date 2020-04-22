@@ -69,4 +69,9 @@ public class MergeSort<T> extends GenericSort<T> {
         }
 
     }
+
+
+    public String toString(){
+        return "Merge Sort";
+    }
 }

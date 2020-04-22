@@ -53,4 +53,8 @@ public class RadixSort extends GenericSort<Integer> {
         }
     }
 
+    public String toString(){
+        return "Radix Sort LSD Base "+this.base;
+    }
+
 }

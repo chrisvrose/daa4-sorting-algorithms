@@ -37,4 +37,8 @@ public class InsertionSort<T> extends GenericSort<T> {
         return this.count;
     }
 
+    public String toString(){
+        return "Insertion Sort";
+    }
+
 }

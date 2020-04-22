@@ -13,13 +13,12 @@ public class App {
         System.out.println(s);
     }
 
-    static String menu = "1. Menu\n2. Create element array\n3. Select Sorting algorithm\n4. Sort\n0. Exit";
-    static String sort = "1.Insertion\n2.Merge\n3.Tree\n4.Radix Base n";
+    static String menu = "1. Menu\n2. Create element array\n3. Sort\n0. Exit";
+    // static String sort = "1.Insertion\n2.Merge\n3.Tree\n4.Radix Base n";
 
     public static void main(String[] args) {
         ArrayList<Integer> list = null;
-        int choice = 0, i, x, y;
-        Sorter<Integer> sorter = null;
+        int choice = 0, i, x;
         Scanner in = new Scanner(System.in);
         sop(menu);
         while ((choice = in.nextInt()) != 0) {
@@ -43,58 +42,38 @@ public class App {
                     for (i = 0; i < x; i++) {
                         list.add(in.nextInt());
                     }
-                    sop("Enter menu option again:");
+                    sop("Enter menu option:");
                     break;
                 case 3:
                     try {
                         if (list == null) {
-                            throw new Exception("Did not initialize list");
+                            throw new Exception("Did not set list yet");
                         }
-                        sop(sort);
+                        ArrayList<Sorter<Integer>> sorters = new ArrayList<Sorter<Integer>>();
+                        sop("Radix sort base n=?");
                         x = in.nextInt();
-                        switch (x) {
-                            case 1:
-                                sop("Insertion sort");
-                                sorter = new InsertionSort<>(list, (a, b) -> a - b);
-                            case 2:
-                                sop("Merge Sort");
-                                sorter = new MergeSort<Integer>(list, (a, b) -> a - b);
-                            case 3:
-                                sop("Tree Sort");
-                                sorter = new TreeSort(list);
-                                break;
-                            case 4:
-                                sop("Radix LSD Base N");
-                                sop("Base N=?");
-                                y = in.nextInt();
-                                sorter = new RadixSort(list, y);
-                                break;
-                            default:
-                                throw new Exception("Invalid Option for sorting");
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-
-                    } finally {
-                        sop("Enter menu option again:");
-                    }
-                    break;
-                case 4:
-                    try {
-                        if (sort == null) {
-                            throw new Exception("No sorting algo selected");
-                        }
-                        sorter.sort();
+                        sorters.add(new InsertionSort<Integer>(new ArrayList<Integer>(list), (a, b) -> a - b));
+                        sorters.add(new MergeSort<Integer>(new ArrayList<Integer>(list), (a, b) -> a - b));
+                        sorters.add(new TreeSort(new ArrayList<Integer>(list)));
+                        sorters.add(new RadixSort(new ArrayList<Integer>(list), x));
+                        // sorters.add(new);
                         // our initial list got sorted, as java passes these by reference
                         sop("List:");
                         sop(list.stream().map(String::valueOf).collect(Collectors.joining(",")));
-                        sop("Count:" + sorter.getCount());
+                        sop("Sorting results");
+                        for (Sorter<Integer> sorter : sorters) {
+                            sorter.sort();
+                            sop("Method:" + sorter.toString() + "\nSorted:" + (sorter.isSorted() ? "Yes" : "No")
+                                    + "\tCount:" + sorter.getCount());
+                            sop("Results: " + sorter.getElements().stream().map(String::valueOf)
+                                    .collect(Collectors.joining(",")) + "\n");
+                        }
 
                     } catch (Exception e) {
                         e.printStackTrace();
 
                     } finally {
-                        sop("Enter menu option again:");
+                        sop("Enter menu option:");
                     }
                     break;
                 default:
