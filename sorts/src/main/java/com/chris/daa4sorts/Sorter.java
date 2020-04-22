@@ -1,5 +1,7 @@
 package com.chris.daa4sorts;
 
+import java.util.List;
+
 public interface Sorter<T> {
     /**
      * Perform a sort
@@ -11,5 +13,6 @@ public interface Sorter<T> {
      * @return
      */
     boolean isSorted();
-    public long getCount();
+    long getCount();
+    List<T> getElements();
 }

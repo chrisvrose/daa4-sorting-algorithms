@@ -53,7 +53,7 @@ public class MergeSort<T> extends GenericSort<T> {
                 elements.set(i + j + l, a1.get(i));
                 i++;
             } else {
-                elements.set(i + j + l, a2.get(i));
+                elements.set(i + j + l, a2.get(j));
                 j++;
             }
         }
@@ -63,7 +63,7 @@ public class MergeSort<T> extends GenericSort<T> {
             count++;
         }
         while (j < (h - m)) {
-            elements.set(i + j + l, a2.get(i));
+            elements.set(i + j + l, a2.get(j));
             j++;
             count++;
         }
