@@ -16,7 +16,7 @@ import junit.framework.AssertionFailedError;
  * Unit test for simple App.
  */
 public class SortTest {
-
+    final int num = 8192;
     /**
      * Prepare a sorted array
      * 
@@ -78,7 +78,7 @@ public class SortTest {
     public void testRadix() {
         long asc, desc, rand;
         System.out.println("Radix LSD BASE 10");
-        for (int i = 1; i <= 8192; i *= 2) {
+        for (int i = 1; i <= num; i *= 2) {
             asc = testSort(new RadixSort(prepareAscendingList(i), 10), i);
             desc = testSort(new RadixSort(prepareDescendingList(i), 10), i);
             rand = testSort(new RadixSort(prepareRandomList(i), 10), i);
@@ -90,7 +90,7 @@ public class SortTest {
     public void testInsertion() {
         long asc, desc, rand;
         System.out.println("Insertion Sort");
-        for (int i = 1; i <= 256; i *= 2) {
+        for (int i = 1; i <= num; i *= 2) {
             asc = testSort(new InsertionSort<Integer>(prepareAscendingList(i), (a, b) -> a - b), i);
             desc = testSort(new InsertionSort<Integer>(prepareDescendingList(i), (a, b) -> a - b), i);
             rand = testSort(new InsertionSort<Integer>(prepareRandomList(i), (a, b) -> a - b), i);
@@ -102,7 +102,7 @@ public class SortTest {
     public void testTree() {
         long asc, desc, rand;
         System.out.println("Tree Sort");
-        for (int i = 1; i <= 4096; i *= 2) {
+        for (int i = 1; i <= num; i *= 2) {
             asc = testSort(new TreeSort(prepareAscendingList(i)), i);
             desc = testSort(new TreeSort(prepareDescendingList(i)), i);
             rand = testSort(new TreeSort(prepareRandomList(i)), i);
@@ -114,7 +114,7 @@ public class SortTest {
     public void testMerge() {
         long asc, desc, rand;
         System.out.println("Merge Sort");
-        for (int i = 1; i <= 4096; i *= 2) {
+        for (int i = 1; i <= num; i *= 2) {
             asc=testSort(new MergeSort<Integer>(prepareAscendingList(i), (a, b) -> a - b), i);
             desc=testSort(new MergeSort<Integer>(prepareDescendingList(i), (a, b) -> a - b), i);
             rand=testSort(new MergeSort<Integer>(prepareRandomList(i), (a, b) -> a - b), i);
