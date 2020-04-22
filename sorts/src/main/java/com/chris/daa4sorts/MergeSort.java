@@ -2,7 +2,7 @@ package com.chris.daa4sorts;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-//TODO FIX MERGESORT
+
 public class MergeSort<T> extends GenericSort<T> {
     public MergeSort(ArrayList<T> elements, Comparator<T> comparator) {
         this.elements = elements;
