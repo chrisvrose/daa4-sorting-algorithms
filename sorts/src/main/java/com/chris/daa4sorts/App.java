@@ -62,7 +62,7 @@ public class App {
                                 sorter = new TreeSort(list);
                                 break;
                             case 4:
-                                sop("Radix MSD Base N");
+                                sop("Radix LSD Base N");
                                 sop("Base N=?");
                                 y = in.nextInt();
                                 sorter = new RadixSort(list, y);
