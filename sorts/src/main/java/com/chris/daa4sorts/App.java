@@ -21,13 +21,14 @@ public class App {
         int choice = 0, i, x, y;
         Sorter<Integer> sorter = null;
         Scanner in = new Scanner(System.in);
-
+        sop(menu);
         while ((choice = in.nextInt()) != 0) {
             switch (choice) {
                 case 0:
                     break;
                 case 1:
                     sop(menu);
+                    break;
                 case 2:
                     System.out.print("Current:");
                     if (list == null) {
@@ -42,6 +43,7 @@ public class App {
                     for (i = 0; i < x; i++) {
                         list.add(in.nextInt());
                     }
+                    sop("Enter menu option again:");
                     break;
                 case 3:
                     try {
@@ -70,9 +72,10 @@ public class App {
                             default:
                                 throw new Exception("Invalid Option for sorting");
                         }
-
                     } catch (Exception e) {
                         e.printStackTrace();
+
+                    } finally {
                         sop("Enter menu option again:");
                     }
                     break;
@@ -86,8 +89,11 @@ public class App {
                         sop("List:");
                         sop(list.stream().map(String::valueOf).collect(Collectors.joining(",")));
                         sop("Count:" + sorter.getCount());
+
                     } catch (Exception e) {
                         e.printStackTrace();
+
+                    } finally {
                         sop("Enter menu option again:");
                     }
                     break;

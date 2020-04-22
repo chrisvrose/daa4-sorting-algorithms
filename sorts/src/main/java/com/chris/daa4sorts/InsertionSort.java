@@ -21,6 +21,7 @@ public class InsertionSort<T> extends GenericSort<T> {
              * Move elements of arr[0..i-1], that are greater than key, to one position
              * ahead of their current position
              */
+            count++;
             while (j >= 0 &&  comparator.compare(elements.get(j), key)>0) {
                 elements.set(j+1,elements.get(j));
                 this.count++;
